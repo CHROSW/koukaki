@@ -16,6 +16,19 @@
     top: 0%;
   }
 }
+@keyframes banner-background-down {
+  0% {
+    background-position: 0px -50px;
+    background-repeat: no-repeat;
+  }
+  100% {
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+  }
+}
+.banner {
+  animation: banner-background-down cubic-bezier(0.2, 1, 0.3, 1) 3s;
+}
 .banner img {
   position: relative;
   animation: banner-title-up cubic-bezier(0.2, 1, 0.3, 1) 3s;
