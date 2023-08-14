@@ -70,7 +70,24 @@ const obstudio = new IntersectionObserver(entries => {
 
 obstudio.observe(document.querySelector('#studio div'));
 
+/* footer section */
+const obsfooter = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    const animfooter = document.querySelector('#colophon');
+    const animFooterFlower = document.querySelector('#colophon ul'); 
+    if (entry.isIntersecting) {
+      animfooter.classList.add('footer-transition');
+      animFooterFlower.classList.add('footer-transition-flower'); 
+    return; // if we added the class, exit the function
+    }
 
+    // We're not intersecting, so remove the class!
+    animfooter.classList.remove('footer-transition');
+    animFooterFlower.classList.remove('footer-transition-flower');
+  });
+});
+
+obsfooter.observe(document.querySelector('#colophon ul'));
 
 
 
