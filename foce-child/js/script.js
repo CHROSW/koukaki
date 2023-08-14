@@ -35,8 +35,21 @@ jQuery(document).ready(function($) {
 
   obscharacters.observe(document.querySelector('#characters'));
 
+ /* place section */
+ const obsplace = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    const animcharacters = document.querySelector('#place');
+    if (entry.isIntersecting) {
+      animcharacters.classList.add('place-transition');
+    return; // if we added the class, exit the function
+    }
 
+    // We're not intersecting, so remove the class!
+    animcharacters.classList.remove('place-transition');
+  });
+});
 
+obsplace.observe(document.querySelector('#place div p'));
 
 
 

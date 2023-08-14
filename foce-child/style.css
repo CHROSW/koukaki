@@ -82,3 +82,23 @@
   opacity: 1;
   transform: translateY(0px);
 }
+/* place section animation */
+#place {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s;
+}
+#place div p {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s;
+}
+#place.place-transition {
+  opacity: 1;
+  transform: translateY(0px);
+}
+#place.place-transition div p {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
