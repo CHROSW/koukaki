@@ -35,7 +35,7 @@
         animation: banner-title-up cubic-bezier(0.2,1,0.3,1) 3s;
     }
 }
-
+/* story section animation */
 .story{
     h2{
         opacity:0;
@@ -79,4 +79,13 @@
         }
     }
 }
-
+/* characters section animation */
+#characters{
+    opacity:0;
+    transform: translateY(20px);
+    transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s;
+    &.characters-transition{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}

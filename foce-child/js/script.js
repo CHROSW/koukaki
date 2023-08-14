@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
   $(document).ready(function(){
-    
+    /* story section */
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       const animStoryH2 = document.querySelector('#story.story h2');
@@ -18,6 +18,33 @@ jQuery(document).ready(function($) {
   });
   
   observer.observe(document.querySelector('#story.story p'));
+
+  /* characters section */
+  const obscharacters = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const animcharacters = document.querySelector('#characters');
+      if (entry.isIntersecting) {
+        animcharacters.classList.add('characters-transition');
+      return; // if we added the class, exit the function
+      }
   
+      // We're not intersecting, so remove the class!
+      animcharacters.classList.remove('characters-transition');
+    });
+  });
+
+  obscharacters.observe(document.querySelector('#characters'));
+
+
+
+
+
+
+
+
+
+
+
+
   });
   });
