@@ -38,22 +38,37 @@ jQuery(document).ready(function($) {
  /* place section */
  const obsplace = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    const animcharacters = document.querySelector('#place');
+    const animplace = document.querySelector('#place');
     if (entry.isIntersecting) {
-      animcharacters.classList.add('place-transition');
+      animplace.classList.add('place-transition');
     return; // if we added the class, exit the function
     }
 
     // We're not intersecting, so remove the class!
-    animcharacters.classList.remove('place-transition');
+    animplace.classList.remove('place-transition');
   });
 });
 
 obsplace.observe(document.querySelector('#place div p'));
 
+/* studio section */
+const obstudio = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    const animStudioH2 = document.querySelector('#studio h2');
+    const animStudioText = document.querySelector('#studio div'); 
+    if (entry.isIntersecting) {
+      animStudioH2.classList.add('studio-transition');
+      animStudioText.classList.add('studio-transition-text'); 
+    return; // if we added the class, exit the function
+    }
 
+    // We're not intersecting, so remove the class!
+    animStudioH2.classList.remove('studio-transition');
+    animStudioText.classList.remove('studio-transition-text');
+  });
+});
 
-
+obstudio.observe(document.querySelector('#studio div'));
 
 
 
