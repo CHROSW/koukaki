@@ -39,6 +39,8 @@
 .story{
     h2{
         opacity:0;
+        transform: translateY(20px);
+        transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s;
         h2:before{
             opacity:0;
             transform: translateY(20px);
@@ -51,6 +53,11 @@
         }
         
     }
+    .story-transition{
+        opacity:1;
+        transform:translateY(0px);
+        width:100%;
+    }
     &__article:after{
         opacity:0;
         transform: translateY(20px);
@@ -61,9 +68,15 @@
         transform: translateY(20px);
         transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s;
     }
-    .story-transition{
-        opacity:1;
-        transform:translateY(0px);
+    &__article{
+        &.story-transition-article::before{
+            opacity: 1;
+            transform: translateY(0px);
+        }
+        &.story-transition-article::after{
+            opacity: 1;
+            transform: translateY(0px);
+        }
     }
 }
 

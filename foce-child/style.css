@@ -49,6 +49,11 @@
   transform: translateY(20px);
   transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s;
 }
+.story .story-transition{
+  opacity: 1;
+  transform: translateY(0px);
+  width: 100%;
+}
 .story__article:after {
   opacity: 0;
   transform: translateY(20px);
@@ -59,8 +64,11 @@
   transform: translateY(20px);
   transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s;
 }
-
-.story .story-transition {
+.story__article.story-transition-article::before {
+  opacity: 1;
+  transform: translateY(0px);
+}
+.story__article.story-transition-article::after {
   opacity: 1;
   transform: translateY(0px);
 }
