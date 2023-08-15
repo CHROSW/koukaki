@@ -3,8 +3,8 @@ jQuery(document).ready(function($) {
     /* story section */
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      const animStoryH2 = document.querySelector('#story.story h2');
-      const animStoryArticle = document.querySelector('#story.story .story__article'); 
+      const animStoryH2 = document.querySelector('.story h2');
+      const animStoryArticle = document.querySelector('.story__article'); 
       if (entry.isIntersecting) {
         animStoryH2.classList.add('story-transition');
         animStoryArticle.classList.add('story-transition-article'); 
@@ -89,7 +89,29 @@ const obsfooter = new IntersectionObserver(entries => {
 
 obsfooter.observe(document.querySelector('#colophon ul'));
 
-
-
+/* title story to animate */
+let addSpanTitleStory = document.querySelector('.story h2');
+let contentTitleStory = addSpanTitleStory.textContent;
+addSpanTitleStory.textContent = "";
+let spanStory= document.createElement('div');
+addSpanTitleStory.appendChild(spanStory).innerHTML = contentTitleStory;
+/* title characters to animate */
+let addSpanTitleCharacter = document.querySelector('.main-character h3');
+let contentTitleCharacter = addSpanTitleCharacter.textContent;
+addSpanTitleCharacter.textContent = "";
+let spanCharacter= document.createElement('div');
+addSpanTitleCharacter.appendChild(spanCharacter).innerHTML = contentTitleCharacter;
+/* title place to animate */
+let addSpanTitlePlace = document.querySelector('#place h3');
+let contentTitlePlace = addSpanTitlePlace.textContent;
+addSpanTitlePlace.textContent = "";
+let spanPlace= document.createElement('div');
+addSpanTitlePlace.appendChild(spanPlace).innerHTML = contentTitlePlace;
+/* title studio to animate */
+let addSpanTitleStudio = document.querySelector('#studio h2');
+let contentTitleStudio = addSpanTitleStudio.textContent;
+addSpanTitleStudio.textContent = "";
+let spanStudio= document.createElement('div');
+addSpanTitleStudio.appendChild(spanStudio).innerHTML = contentTitleStudio;
   });
   });
