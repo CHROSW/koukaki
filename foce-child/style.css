@@ -33,6 +33,15 @@
   position: relative;
   animation: banner-title-up cubic-bezier(0.2, 1, 0.3, 1) 3s;
 }
+/* flower animation */
+@keyframes flower-article-rotation{
+   from{
+    transform: rotate(0deg);
+   }
+   to{
+    transform: rotate(359deg);
+   }
+}
 /* story section animation */
 .story h2 {
   opacity: 0;
@@ -71,6 +80,7 @@
 .story__article.story-transition-article::after {
   opacity: 1;
   transform: translateY(0px);
+  animation: flower-article-rotation 20s infinite linear;
 }
 /* characters section animation */
 #characters {
