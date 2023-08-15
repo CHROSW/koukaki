@@ -168,3 +168,49 @@
   opacity: 1;
   transform: translateY(0px);
 }
+/* nomination section */
+#colophon {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 9em;
+}
+#colophon img{
+  margin-top:52px;
+  height:129px;
+  width:278px;
+}
+#colophon ul{
+  padding-top: 18em;
+}
+#colophon::after{
+  bottom: 45em;
+}
+#colophon section article{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+#colophon .nomination{
+  padding-left:30px;
+  padding-right:50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-image: url("/koukaki/wp-content/themes/foce-child/images/Rectangle 23");
+  background-repeat: no-repeat;
+}
+#colophon .nomination p:first-child{
+  height:187px;
+  width:663px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 52.5px;
+  letter-spacing: -2%;
+  color:#FFF5E9;
+  position: relative;
+  left:30px;
+  bottom:20px;
+}
+
+
