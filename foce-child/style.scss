@@ -295,3 +295,36 @@
     }
     
 }
+/* coverflow carousel */
+.story{
+    #characters{
+        .swiper{
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            position: relative;
+            right: 20%;
+        }
+        .swiper-slide{
+            background-position: center;
+            background-size: cover;
+            figure{
+                img{
+                    display: block;
+                    &.attachment-full{
+                        &.size-full{
+                            &.wp-post-image{
+                                max-width: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        h3{
+            position: relative;
+            right:20%;
+        }
+    }
+
+}

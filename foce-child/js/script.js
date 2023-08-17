@@ -17,7 +17,7 @@ jQuery(document).ready(function($) {
       });
     });
   
-    observer.observe(document.querySelector('#story.story p'));
+    observer.observe(document.querySelector('.story p'));
 
     /* characters section */
     const obscharacters = new IntersectionObserver(entries => {
@@ -117,12 +117,30 @@ jQuery(document).ready(function($) {
     let bannerVideo = document.querySelector('.banner');
     let videoTag= document.createElement('video');
     bannerVideo.append(videoTag);
-    videoTag.setAttribute('src', 'wp-content/themes/foce-child/video/Studio+Koukaki-vidéo+header+sans+son+(1).mp4');
+    videoTag.setAttribute('src', 'wp-content/themes/foce-child/video/StudioKoukakivideoheadersansson.mp4');
     videoTag.setAttribute('type',"video/mp4");
     videoTag.muted = true;
     videoTag.autoplay = true;
     videoTag.loop = true;
+    /* swipper coverflow */
+    var swiper = new Swiper(".mySwiper", {
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
     
+  
   });
     
     
