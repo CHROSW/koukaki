@@ -28,7 +28,7 @@ get_header();
                     <?php
                     $main_character = $characters_query->posts[0];
                     echo '<div class="swiper mySwiper">';
-                    echo '<div class="swiper-wrapper" style="display:flex;">';
+                    echo '<div class="swiper-wrapper">';
                     echo '<div  class="swiper-slide">';
                     echo '<figure>';
                     echo get_the_post_thumbnail( $main_character->ID, 'full' );
@@ -49,7 +49,7 @@ get_header();
                     }
                     echo '</div>';
                     echo '</div>';
-                    echo '<div class="swiper-pagination"></div>';
+                    //echo '<div class="swiper-pagination"></div>';
                     ?>
                 </div>
             </article>

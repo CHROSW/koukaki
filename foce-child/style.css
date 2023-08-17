@@ -272,8 +272,11 @@
   width: 100%;
   padding-top: 50px;
   padding-bottom: 50px;
-  position: relative;
-  right: 20%;
+}
+.story #characters .swiper .swiper-wrapper{
+  overflow-y: hidden;
+  height:480px;
+  width:1000px;
 }
 .story #characters .swiper-slide {
   background-position: center;
@@ -286,6 +289,6 @@
   max-width: none;
 }
 .story #characters h3{
-  position: relative;
-  right:20%;
+  position:relative;
+  right:40%;
 }

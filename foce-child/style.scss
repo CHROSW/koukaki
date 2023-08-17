@@ -302,8 +302,11 @@
             width: 100%;
             padding-top: 50px;
             padding-bottom: 50px;
-            position: relative;
-            right: 20%;
+            .swiper-wrapper{
+                overflow-y: hidden;
+                height:480px;
+                width:1000px;
+            }
         }
         .swiper-slide{
             background-position: center;
@@ -323,7 +326,7 @@
         }
         h3{
             position: relative;
-            right:20%;
+            right:40%;
         }
     }
 

@@ -125,9 +125,17 @@ jQuery(document).ready(function($) {
     /* swipper coverflow */
     var swiper = new Swiper(".mySwiper", {
       effect: "coverflow",
-      grabCursor: true,
+      grabCursor: false,
       centeredSlides: true,
-      slidesPerView: "auto",
+      slidesPerView: 4,
+      spaceBetween: 1,
+      freeMode: true,
+      loop: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      speed: 1000,
       coverflowEffect: {
         rotate: 50,
         stretch: 0,
