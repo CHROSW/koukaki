@@ -57,6 +57,10 @@ get_header();
                 <div>
                     <h3>Le Lieu</h3>
                     <p><?php echo get_theme_mod('place'); ?></p>
+                    <div class="big-cloud">
+                    </div>
+                    <div class="little-cloud">
+                    </div>
                 </div>
 
             </article>

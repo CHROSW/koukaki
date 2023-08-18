@@ -292,3 +292,37 @@
   position:relative;
   right:40%;
 }
+/* cloud animation */
+.story #place{
+  background: url('/koukaki/wp-content/themes/foce-child/images/Studio_Koukaki-image_place.png');
+}
+.story #place .big-cloud{
+background: url('/koukaki/wp-content/themes/foce-child/images/big_cloud.png');
+width:316px;
+height:122px;
+left: 950px;
+bottom:320px;
+filter:blur(10px);
+position: relative;
+z-index: 2;
+transform:translateX(0px);
+transition: transform linear 3s;
+}
+.story #place .big-cloud.place-transition-cloud{
+  transform:translateX(-300px);
+}
+.story #place .little-cloud{
+  background: url('/koukaki/wp-content/themes/foce-child/images/little_cloud.png');
+  width:142px;
+  height: 55px;
+  left:710px;
+  bottom:265px;
+  filter: blur(8px);
+  position: relative;
+  z-index: -1;
+  transform:translateX(0px);
+  transition: transform linear 3s;
+}
+.story #place .little-cloud.place-transition-cloud{
+  transform:translateX(-300px);
+}

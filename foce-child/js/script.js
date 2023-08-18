@@ -39,13 +39,19 @@ jQuery(document).ready(function($) {
     const obsplace = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         const animplace = document.querySelector('#place');
+        const animplaceBigCloud = document.querySelector('#place div .big-cloud');
+        const animplaceLittleCloud = document.querySelector('#place div .little-cloud');
         if (entry.isIntersecting) {
         animplace.classList.add('place-transition');
+        animplaceBigCloud.classList.add('place-transition-cloud');
+        animplaceLittleCloud.classList.add('place-transition-cloud');
         return; // if we added the class, exit the function
         }
 
         // We're not intersecting, so remove the class!
         animplace.classList.remove('place-transition');
+        animplaceBigCloud.classList.remove('place-transition-cloud');
+        animplaceLittleCloud.classList.remove('place-transition-cloud');
       });
     });
 
