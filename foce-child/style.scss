@@ -367,3 +367,108 @@
         }
     }
 }
+@media (max-width: 699px) {
+    .banner {
+      img {
+        position: relative;
+        animation: banner-title-up cubic-bezier(0.2, 1, 0.3, 1) 3s;
+        z-index: 1;
+      }
+  
+      animation: banner-background-down cubic-bezier(0.2, 1, 0.3, 1) 3s;
+    }
+  
+    /* burger animation */
+  
+    .main-navigation {
+      &.toggled .nav-menu {
+        height: 100vh;
+        animation: burger-down cubic-bezier(0.2, 1, 0.3, 1) 3s;
+      }
+  
+      .burger-title.menu-toggle {
+        position: absolute;
+        bottom: 5px;
+        margin-left: 25%;
+      }
+  
+      button {
+        margin: 0px;
+        position: relative;
+        left: 85%;
+      }
+  
+      .left-animation-burger {
+        display: flex;
+        flex-direction: column;
+        float: left;
+      }
+  
+      .right-animation-burger {
+        display: flex;
+        flex-direction: column;
+        float: right;
+      }
+  
+      .left-animation-burger.menu-toggle {
+        .orchid-burger {
+          width: 112px;
+          height: 168px;
+          background: url('../foce/assets/images/orchid.png');
+        }
+  
+        .cat1-burger {
+          width: 115px;
+          height: 110px;
+          background: url('/koukaki/wp-content/themes/foce-child/images/cat.png');
+        }
+  
+        .flower-burger {
+          width: 70px;
+          height: 70px;
+          background: url('../foce/assets/images/flower.png');
+          background-size: cover;
+        }
+  
+        .cat2-burger {
+          width: 105px;
+          height: 95px;
+          background: url('/koukaki/wp-content/themes/foce-child/images/cat2.png');
+        }
+      }
+  
+      .right-animation-burger.menu-toggle {
+        .sunflower-burger {
+          width: 216px;
+          height: 216px;
+          background: url('../foce/assets/images/sunflower.png');
+          background-size: cover;
+        }
+  
+        .randomflower-burger {
+          width: 45px;
+          height: 74px;
+          background: url('../foce/assets/images/random_flower.png');
+          background-size: cover;
+        }
+  
+        .cat3-burger {
+          width: 109px;
+          height: 98px;
+          background: url('/koukaki/wp-content/themes/foce-child/images/Group 180.png');
+          background-size: cover;
+        }
+  
+        .hibiscusfooter-burger {
+          width: 313px;
+          height: 313px;
+          background: url('../foce/assets/images/hibiscus_footer.png');
+        }
+      }
+  
+      .img-title-burger.menu-toggle {
+        width: 154px;
+        height: 95px;
+      }
+    }
+  }
