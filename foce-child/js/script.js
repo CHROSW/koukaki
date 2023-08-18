@@ -120,7 +120,7 @@ jQuery(document).ready(function($) {
     let spanStudio= document.createElement('div');
     addSpanTitleStudio.appendChild(spanStudio).innerHTML = contentTitleStudio;
     /* video */
-    if(screen.width > 699){
+    if(window.screen.width > 699){
       let bannerVideo = document.querySelector('.banner');
       let videoTag= document.createElement('video');
       bannerVideo.append(videoTag);
