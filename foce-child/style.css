@@ -346,11 +346,12 @@ transition: transform linear 3s;
   /* burger animation */
   .main-navigation.toggled .nav-menu{
     height:100vh;
+    width: 100vw;
     animation: burger-down cubic-bezier(0.2, 1, 0.3, 1) 3s;
   }
   .main-navigation .burger-title.menu-toggle{
       position: absolute;
-      bottom:5px;
+      top:5px;
       margin-left:25%;
   }
   .main-navigation button{
@@ -366,28 +367,53 @@ transition: transform linear 3s;
   .main-navigation .right-animation-burger{
     display: flex;
     flex-direction: column;
-    float: right;
+  }
+  .main-navigation .right-animation-burger.menu-toggle{
+    width:30%;
+    position: absolute;
+    top:30px;
+    right:30%;
+  }
+  .main-navigation .left-animation-burger.menu-toggle{
+    width: 30%;
+    position: absolute;
+    left: 0px;
   }
   .main-navigation .left-animation-burger.menu-toggle .orchid-burger{
-    width:112px;
-    height:168px;
+    width:56px;
+    height:84px;
     background: url('../foce/assets/images/orchid.png');
+    background-position: 92% 50%;
+    background-size: cover;
+    position: relative;
+    top:30px;
   }
   .main-navigation .left-animation-burger.menu-toggle .cat1-burger{
-    width:115px;
-    height:110px;
+    width:65px;
+    height:65px;
     background: url('/koukaki/wp-content/themes/foce-child/images/cat.png');
+    background-size: cover;
+    position:relative;
+    left:60%;
+    bottom:10px;
   }
   .main-navigation .left-animation-burger.menu-toggle .flower-burger{
-    width:70px;
-    height:70px;
+    width:35px;
+    height:35px;
     background: url('../foce/assets/images/flower.png');
     background-size: cover;
+    position:relative;
+    left:50%;
+    top:115px;
   }
   .main-navigation .left-animation-burger.menu-toggle .cat2-burger{
-    width:105px;
-    height:95px;
+    width:55px;
+    height:45px;
     background: url('/koukaki/wp-content/themes/foce-child/images/cat2.png');
+    background-size: cover;
+    position: relative;
+    top:210px;
+    left:15%;
   }
   .main-navigation .right-animation-burger.menu-toggle .sunflower-burger{
     width:216px;
@@ -409,12 +435,32 @@ transition: transform linear 3s;
     background-size: cover;
   }
   .main-navigation .right-animation-burger.menu-toggle .hibiscusfooter-burger{
-    width:313px;
-    height:313px;
+    width:150px;
+    height:150px;
     background: url('../foce/assets/images/hibiscus_footer.png');
   }
   .main-navigation .img-title-burger.menu-toggle{
-    width:154px;
-    height:95px;
+    width:75px;
+    height:65px;
+    padding-top:10px;
+  }
+  .main-navigation ul{
+    width:100%;
+    padding-left: 0px;
+  }
+  .main-navigation ul img{
+    margin: auto;
+  }
+  .main-navigation ul .footer-burger-menu.menu-toggle{
+    margin-top:50px;
+    text-align: center;
+    font-size: x-small;
+  }
+  .main-navigation ul li a{
+    font-weight: 400;
+    font-size: 2em;
+    font-family: 'Roboto Mono', monospace;
+    line-height: 84px;
+    text-align: center;
   }
 }
