@@ -156,7 +156,30 @@ jQuery(document).ready(function($) {
       },
     });
     
-  
+    /* burger menu */
+    const imgMenu = document.querySelector('button.menu-toggle');
+    const navMenu= document.querySelector('.main-navigation');
+    imgMenu.addEventListener('click', function(){
+      if(imgMenu.innerHTML !== "<span><strong>X</strong></span>"){
+        imgMenu.innerHTML='';
+        imgMenu.innerHTML="<span><strong>X</strong></span>";
+      }else{
+        imgMenu.innerHTML="<span class='line'></span><span class='line'></span><span class='line'></span>";
+      }
+
+      const linkMenu = document.querySelectorAll('.nav-menu li a');
+      for(i=0 ; i < linkMenu.length ; i++){
+        linkMenu[i].addEventListener("click", function(){
+          navMenu.classList.remove('toggled');
+          imgMenu.innerHTML="<span class='line'></span><span class='line'></span><span class='line'></span>";
+        });
+    }
+
+
+      
+    });
+
+
   });
     
     
