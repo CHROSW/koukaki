@@ -55,6 +55,27 @@
       transform: translateY(-15%);
   }
 }
+/* floating animation */
+@keyframes floating{
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+/* title animation */
+@keyframes title-up {
+  from{
+    transform: translateY(105px);
+  }
+  to{
+    transform: translateY(0px);
+  }
+}
 .banner {
   animation: banner-background-down cubic-bezier(0.2, 1, 0.3, 1) 3s;
 }
@@ -398,6 +419,7 @@ transition: transform linear 3s;
     position:relative;
     left:60%;
     bottom:10px;
+    animation: floating infinite linear 3s;
   }
   .main-navigation .left-animation-burger.menu-toggle .flower-burger{
     width:35px;
@@ -417,6 +439,7 @@ transition: transform linear 3s;
     position: relative;
     top:210px;
     left:15%;
+    animation: floating infinite linear 3s 1s;
   }
   .main-navigation .right-animation-burger.menu-toggle .sunflower-burger{
     width:108px;
@@ -443,6 +466,7 @@ transition: transform linear 3s;
     background-size: cover;
     position: relative;
     top: 120px;
+    animation: floating infinite linear 3s 2s;
   }
   .main-navigation .right-animation-burger.menu-toggle .hibiscusfooter-burger{
     width:200px;
@@ -478,6 +502,7 @@ transition: transform linear 3s;
     font-family: 'Roboto Mono', monospace;
     line-height: 84px;
     text-align: center;
+    animation: title-up cubic-bezier(0.2, 1, 0.3, 1) 3s;
   }
   .main-navigation ul li a:hover{
     text-shadow: #ff5c00 -1px 0 5px;

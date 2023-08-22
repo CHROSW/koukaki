@@ -48,6 +48,27 @@
         transform: translateY(-15%);
     }
   }
+  /* floating animation */
+@keyframes floating{
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  /* title animation */
+  @keyframes title-up {
+    from{
+      transform: translateY(105px);
+    }
+    to{
+      transform: translateY(0px);
+    }
+  }
 .banner{
         animation: banner-background-down cubic-bezier(0.2,1,0.3,1) 3s;
     img{
@@ -439,6 +460,7 @@
 			    background-size: cover;
 			    position: relative;
 			    top: 120px;
+                animation: floating infinite linear 3s 2s;
 		    }
 		    .hibiscusfooter-burger {
 			    width: 200px;
@@ -473,6 +495,7 @@
 			    position: relative;
 			    left: 60%;
 			    bottom: 10px;
+                animation: floating infinite linear 3s;
 		    }
 		    .flower-burger {
 			    width: 35px;
@@ -492,6 +515,7 @@
 			    position: relative;
 			    top: 210px;
 			    left: 15%;
+                animation: floating infinite linear 3s 1s;
 		    }
 	    }
 	    .img-title-burger.menu-toggle {
@@ -518,6 +542,7 @@
 				    font-family: $font-family_1;
 				    line-height: 84px;
 				    text-align: center;
+                    animation: title-up cubic-bezier(0.2, 1, 0.3, 1) 3s;
 				    &:hover {
 					    text-shadow: #ff5c00 -1px 0 5px;
 					    color: $color_1;
