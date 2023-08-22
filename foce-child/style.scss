@@ -420,15 +420,17 @@
 			    height: 108px;
 			    background: url('../foce/assets/images/sunflower.png');
 			    background-size: cover;
+                animation: flower-article-rotation infinite linear 20s;
 		    }
 		    .randomflower-burger {
-			    width: 22px;
+			    width: 37px;
 			    height: 37px;
 			    background: url('../foce/assets/images/random_flower.png');
 			    background-size: cover;
 			    position: relative;
 			    bottom: 35px;
 			    left: 90%;
+                animation: flower-article-rotation infinite linear 20s;
 		    }
 		    .cat3-burger {
 			    width: 75px;
@@ -439,14 +441,14 @@
 			    top: 120px;
 		    }
 		    .hibiscusfooter-burger {
-			    width: 150px;
-			    height: 130px;
-			    background: url('/koukaki/wp-content/themes/foce-child/images/hibiscus footer.png');
-			    background-position: 0% 0%;
+			    width: 200px;
+			    height: 200px;
+			    background: url('/koukaki/wp-content/themes/foce/assets/images/hibiscus_footer.png');
 			    background-size: cover;
 			    position: relative;
 			    top: 110px;
-			    left: 28%;
+			    left: 50%;
+                animation: flower-article-rotation infinite linear 20s;
 		    }
 	    }
 	    .left-animation-burger.menu-toggle {
@@ -454,13 +456,14 @@
 		    position: absolute;
 		    left: 0px;
 		    .orchid-burger {
-			    width: 56px;
+			    width: 84px;
 			    height: 84px;
 			    background: url('../foce/assets/images/orchid.png');
 			    background-position: 92% 50%;
 			    background-size: cover;
 			    position: relative;
 			    top: 30px;
+                animation: flower-article-rotation infinite linear 20s;
 		    }
 		    .cat1-burger {
 			    width: 65px;
@@ -479,6 +482,7 @@
 			    position: relative;
 			    left: 50%;
 			    top: 100px;
+                animation: flower-article-rotation infinite linear 20s;
 		    }
 		    .cat2-burger {
 			    width: 55px;
