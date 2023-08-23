@@ -106,7 +106,7 @@
 .story h2 div{
   opacity: 0;
   transform: translateY(105px);
-  transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s 3s;
+  transition: all cubic-bezier(0.2, 1, 0.3, 1) 3s 3s;
 }
 .story .story-transition{
   opacity: 1;

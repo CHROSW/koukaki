@@ -99,7 +99,7 @@
         div{
             opacity: 0;
             transform: translateY(105px);
-            transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s 3s;
+            transition: all cubic-bezier(0.2, 1, 0.3, 1) 3s 3s;
         }
         
     }
@@ -554,6 +554,7 @@ $color_2: #FFF5E9;
 		    }
 	    }
     }
+     /* characters title position */
     .story {
         #characters {
             h3 {
