@@ -120,15 +120,24 @@ jQuery(document).ready(function($) {
     let spanStudio= document.createElement('div');
     addSpanTitleStudio.appendChild(spanStudio).innerHTML = contentTitleStudio;
     /* video */
-    if(window.screen.width > 699){
-      let bannerVideo = document.querySelector('.banner');
-      let videoTag= document.createElement('video');
-      bannerVideo.append(videoTag);
-      videoTag.setAttribute('src', 'wp-content/themes/foce-child/video/StudioKoukakivideoheadersansson.mp4');
-      videoTag.setAttribute('type',"video/mp4");
-      videoTag.muted = true;
-      videoTag.autoplay = true;
-      videoTag.loop = true;
+    function showVideo(){
+      if(document.body.clientWidth > 699){
+        let bannerVideo = document.querySelector('.banner');
+        let videoTag= document.createElement('video');
+        bannerVideo.append(videoTag);
+        videoTag.setAttribute('src', 'wp-content/themes/foce-child/video/StudioKoukakivideoheadersansson.mp4');
+        videoTag.setAttribute('type',"video/mp4");
+        videoTag.muted = true;
+        videoTag.autoplay = true;
+        videoTag.loop = true;
+      }else{
+        let videoTagScreen= document.querySelector(video);
+        videoTagScreen.remove();
+      }
+    }
+    window.onresize = showVideo;
+    if(document.body.clientWidth > 699){
+      showVideo();
     }
     /* swipper coverflow */
     var swiper = new Swiper(".mySwiper", {
