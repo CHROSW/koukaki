@@ -509,4 +509,9 @@ transition: transform linear 3s;
     text-shadow: #ff5c00 -1px 0 5px;
     color: black;
   }
+  /* characters title position */
+  .story #characters h3{
+    position:relative;
+    right:0%;
+  }
 }
