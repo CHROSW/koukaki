@@ -86,8 +86,6 @@
 }
 .banner video{
   position: absolute;
-  width:95.4vw;
-  height:95.4vh;
 }
 /* story section animation */
 .story h2 {
@@ -121,9 +119,10 @@
   width: 100%;
 }
 .story__article:after {
-  opacity: 0;
+  /*opacity: 0;*/
   transform: translateY(20px);
   transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s;
+  animation: flower-article-rotation 20s infinite linear;
 }
 .story__article:before {
   opacity: 0;
@@ -135,9 +134,9 @@
   transform: translateY(0px);
 }
 .story__article.story-transition-article::after {
-  opacity: 1;
+  /*opacity: 1;*/
   transform: translateY(0px);
-  animation: flower-article-rotation 20s infinite linear;
+  animation: flower-article-rotation 5s infinite linear;
 }
 /* characters section animation */
 #characters {
@@ -172,7 +171,8 @@
 #place h3 div{
   opacity: 0;
   transform: translateY(105px);
-  transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s 3s;
+  color: #d4d95b;
+  transition: all cubic-bezier(0.2, 1, 0.3, 1) 3s 3s;
 }
 #place.place-transition {
   opacity: 1;
@@ -180,6 +180,7 @@
 }
 #place.place-transition h3 div{
   opacity: 1;
+  color: #FFF5E9;
   transform: translateY(0px);
 }
 #place.place-transition div p {
@@ -334,11 +335,11 @@ bottom:320px;
 filter:blur(10px);
 position: relative;
 z-index: 2;
-transform:translateX(0px);
+transform:translateX(-300px);
 transition: transform linear 3s;
 }
 .story #place .big-cloud.place-transition-cloud{
-  transform:translateX(-300px);
+  transform:translateX(0px);
 }
 .story #place .little-cloud{
   background: url('/koukaki/wp-content/themes/foce-child/images/little_cloud.png');
@@ -349,11 +350,11 @@ transition: transform linear 3s;
   filter: blur(8px);
   position: relative;
   z-index: -1;
-  transform:translateX(0px);
+  transform:translateX(-300px);
   transition: transform linear 3s;
 }
 .story #place .little-cloud.place-transition-cloud{
-  transform:translateX(-300px);
+  transform:translateX(0px);
 }
 @media(max-width:699px){
   .banner img {
