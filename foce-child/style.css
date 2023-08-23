@@ -46,13 +46,19 @@
 /* wave title animation */
 @keyframes move_wave {
   0%, 50%, 100% {
-      transform: translateY(0);
+      transform: translate(0, 0);
   }
-  25% {
-      transform: translateY(15%);
+  20% {
+      transform: translate(5%, 5%);
   }
-  75% {
-      transform: translateY(-15%);
+  40% {
+    transform: translate(-5%, 5%);
+  }
+  60% {
+    transform: translate(5%, -5%);
+  }
+  80% {
+      transform: translate(-5%, -5%);
   }
 }
 /* floating animation */
@@ -78,6 +84,7 @@
 }
 .banner {
   animation: banner-background-down cubic-bezier(0.2, 1, 0.3, 1) 3s;
+  background-attachment: fixed;
 }
 .banner img {
   position: relative;
@@ -85,7 +92,7 @@
   z-index: 1;
 }
 .banner video{
-  position: absolute;
+  position: absolute; 
 }
 /* story section animation */
 .story h2 {
@@ -106,7 +113,7 @@
 .story h2 div{
   opacity: 0;
   transform: translateY(105px);
-  transition: all cubic-bezier(0.2, 1, 0.3, 1) 3s 3s;
+  transition: all cubic-bezier(0.2, 1, 0.3, 1) 3s 1s;
 }
 .story .story-transition{
   opacity: 1;
@@ -147,7 +154,7 @@
 #characters h3 div{
   opacity: 0;
   transform: translateY(105px);
-  transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s 3s;
+  transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s 1s;
 }
 #characters.characters-transition {
   opacity: 1;
@@ -172,7 +179,7 @@
   opacity: 0;
   transform: translateY(105px);
   color: #d4d95b;
-  transition: all cubic-bezier(0.2, 1, 0.3, 1) 3s 3s;
+  transition: all cubic-bezier(0.2, 1, 0.3, 1) 3s 1s;
 }
 #place.place-transition {
   opacity: 1;
@@ -196,7 +203,7 @@
 #studio h2 div{
   opacity: 0;
   transform: translateY(105px);
-  transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s 3s;
+  transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s 1s;
 }
 #studio h2 h2:before {
   opacity: 0;

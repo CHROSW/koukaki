@@ -144,7 +144,7 @@
         div{
             opacity: 0;
             transform: translateY(105px);
-            transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s 3s;
+            transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s 1s;
         }
     }
     &.characters-transition{
@@ -171,7 +171,7 @@ $color_2: #FFF5E9;
             opacity: 0;
             transform: translateY(105px);
             color: $color_1;
-            transition: all cubic-bezier(0.2, 1, 0.3, 1) 3s 3s;
+            transition: all cubic-bezier(0.2, 1, 0.3, 1) 3s 1s;
         }
     }
     div p{
@@ -205,7 +205,7 @@ $color_2: #FFF5E9;
         div{
             opacity: 0;
             transform: translateY(105px);
-            transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s 3s;
+            transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s 1s;
         }
         h2:before{
             opacity:0;

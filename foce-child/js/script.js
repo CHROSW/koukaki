@@ -122,17 +122,22 @@ jQuery(document).ready(function($) {
     /* video */
     function showVideo(){
       if(document.body.clientWidth > 699){
-        let bannerVideo = document.querySelector('.banner');
-        let videoTag= document.createElement('video');
-        bannerVideo.append(videoTag);
-        videoTag.setAttribute('src', 'wp-content/themes/foce-child/video/StudioKoukakivideoheadersansson.mp4');
-        videoTag.setAttribute('type',"video/mp4");
-        videoTag.muted = true;
-        videoTag.autoplay = true;
-        videoTag.loop = true;
+        let videoTagScreen= document.querySelector('video');
+        if(videoTagScreen === null){
+          let bannerVideo = document.querySelector('.banner');
+          let videoTag= document.createElement('video');
+          bannerVideo.append(videoTag);
+          videoTag.setAttribute('src', 'wp-content/themes/foce-child/video/StudioKoukakivideoheadersansson.mp4');
+          videoTag.setAttribute('type',"video/mp4");
+          videoTag.muted = true;
+          videoTag.autoplay = true;
+          videoTag.loop = true;
+        }
       }else{
-        let videoTagScreen= document.querySelector(video);
-        videoTagScreen.remove();
+        let videoTagScreen= document.querySelector('video');
+        if(videoTagScreen !== null){
+          videoTagScreen.remove();
+        }
       }
     }
     window.onresize = showVideo;
@@ -182,13 +187,13 @@ jQuery(document).ready(function($) {
           navMenu.classList.remove('toggled');
           imgMenu.innerHTML="<span class='line'></span><span class='line'></span><span class='line'></span>";
         });
-    }
-
-
-      
+      }  
     });
-
-
+    /* parallalax title-video */
+    var s = skrollr.init();
+    parallalaxTitle=document.querySelector('.banner img');
+    parallalaxTitle.setAttribute('data-bottom-top', 'transform:translate3d(0, 0px, 0)');
+    parallalaxTitle.setAttribute('data-top-bottom', 'transform:translate3d(0, -200px, 0)');
   });
     
     
