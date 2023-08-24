@@ -202,30 +202,11 @@ jQuery(document).ready(function($) {
       },
     });
     
-    /* burger menu */
-    const imgMenu = document.querySelector('button.menu-toggle');
-    const navMenu= document.querySelector('.main-navigation');
-    imgMenu.addEventListener('click', function(){
-      if(imgMenu.innerHTML !== "<span><strong>X</strong></span>"){
-        imgMenu.innerHTML='';
-        imgMenu.innerHTML="<span><strong>X</strong></span>";
-      }else{
-        imgMenu.innerHTML="<span class='line'></span><span class='line'></span><span class='line'></span>";
-      }
-
-      const linkMenu = document.querySelectorAll('.nav-menu li a');
-      for(i=0 ; i < linkMenu.length ; i++){
-        linkMenu[i].addEventListener("click", function(){
-          navMenu.classList.remove('toggled');
-          imgMenu.innerHTML="<span class='line'></span><span class='line'></span><span class='line'></span>";
-        });
-      }  
-    });
     /* parallalax title-video */
     var s = skrollr.init();
     parallalaxTitle=document.querySelector('.banner img');
-    parallalaxTitle.setAttribute('data-bottom-top', 'transform:translate3d(0, 0px, 0)');
-    parallalaxTitle.setAttribute('data-top-bottom', 'transform:translate3d(0, -200px, 0)');
+    parallalaxTitle.setAttribute('data-bottom-top', 'transform:translate(0, 0px, 0)');
+    parallalaxTitle.setAttribute('data-top-bottom', 'transform:translate(0, -200px, 0)');
   });
     
     

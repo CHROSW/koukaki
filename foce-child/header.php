@@ -28,7 +28,7 @@
 	<header id="masthead" class="site-header">
 		<nav id="site-navigation" class="main-navigation">   
             <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-                <span class="line"></span>
+                <span class="line">X</span>
                 <span class="line"></span>
                 <span class="line"></span>
             </button>

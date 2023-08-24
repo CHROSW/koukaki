@@ -74,6 +74,14 @@
    transform: rotate(359deg);
   }
 }
+@keyframes flower-article-up{
+  from{
+    top:120px;
+  }
+  to{
+    top: 0px;
+  }
+}
 /* wave title animation */
 @keyframes move_wave {
   0%, 50%, 100% {
@@ -147,7 +155,7 @@
   animation: fade cubic-bezier(0.2, 1, 0.3, 1) 3s forwards;
 }
 .story__article.story-animation-article::after {
-  animation: fade cubic-bezier(0.2, 1, 0.3, 1) 3s forwards;
+  animation: flower-article-rotation linear 20s infinite, flower-article-up cubic-bezier(0.2, 1, 0.3, 1) 3s forwards;
 }
 /* characters section animation */
 #characters h3 div{
@@ -338,6 +346,10 @@ z-index: 2;
     width: 100vw;
     animation: burger-down cubic-bezier(0.2, 1, 0.3, 1) 3s;
   }
+  .main-navigation.toggled button .line{
+    color: black;
+    background-color: transparent;
+  }
   .main-navigation .burger-title.menu-toggle{
       position: absolute;
       top:5px;
@@ -347,6 +359,9 @@ z-index: 2;
     margin:0px;
     position: relative;
     left:85%;
+  }
+  .main-navigation button .line{
+    color:transparent;
   }
   .main-navigation .left-animation-burger{
     display: flex;

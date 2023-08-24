@@ -67,6 +67,14 @@
      transform: rotate(359deg);
     }
  }
+ @keyframes flower-article-up{
+    from{
+      top:120px;
+    }
+    to{
+      top: 0px;
+    }
+  }
  /* wave title animation */
 @keyframes move_wave {
     0%, 50%, 100% {
@@ -138,7 +146,7 @@
             animation: fade cubic-bezier(0.2, 1, 0.3, 1) 3s forwards;
         }
         &.story-animation-article::after{
-            animation: fade cubic-bezier(0.2, 1, 0.3, 1) 3s forwards;
+            animation: flower-article-rotation linear 20s infinite, flower-article-up cubic-bezier(0.2, 1, 0.3, 1) 3s forwards;
         }
     }
 }
@@ -379,15 +387,21 @@ $color_2: #FFF5E9;
   
     $font-family_1: 'Roboto Mono', monospace;
     $background-color_1: #FFF5E9;
-
-    .main-navigation.toggled {
-	    .nav-menu {
-		    height: 100vh;
-		    width: 100vw;
-		    animation: burger-down cubic-bezier(0.2, 1, 0.3, 1) 3s;
-	    }
-    }
+   
     .main-navigation {
+        &.toggled{
+            .nav-menu{
+                height: 100vh;
+                width: 100vw;
+                animation: burger-down cubic-bezier(0.2, 1, 0.3, 1) 3s;
+            }
+            button{
+                .line{
+                    color: black;
+                    background-color: transparent;
+                }
+            }
+        }
 	    .burger-title.menu-toggle {
 		    position: absolute;
 		    top: 5px;
@@ -397,6 +411,9 @@ $color_2: #FFF5E9;
 		    margin: 0px;
 		    position: relative;
 		    left: 85%;
+            .line{
+                color: transparent;
+            }
 	    }
 	    .left-animation-burger {
 		    display: flex;
