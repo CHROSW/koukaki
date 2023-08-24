@@ -34,14 +34,20 @@ jQuery(document).ready(function($) {
         const animcharacters = document.querySelector('#characters');
         if (entry.isIntersecting) {
           animcharacters.classList.add('characters-transition');
+          animcharacters.classList.add('characters-animation');
         return; // if we added the class, exit the function
         }
   
         // We're not intersecting, so remove the class!
         animcharacters.classList.remove('characters-transition');
+        animcharacters.classList.remove('characters-animation');
       });
     });
-
+    var optionsSectionStory = {
+      root: document.querySelector("#characters"),
+      rootMargin: "140px",
+      threshold: 1.0,
+    };
     obscharacters.observe(document.querySelector('#characters'));
 
     /* place section */
@@ -124,10 +130,13 @@ jQuery(document).ready(function($) {
     addSpanTitlePlace.appendChild(spanPlace).innerHTML = contentTitlePlace;
     /* title studio to animate */
     let addSpanTitleStudio = document.querySelector('#studio h2');
-    let contentTitleStudio = addSpanTitleStudio.textContent;
     addSpanTitleStudio.textContent = "";
-    let spanStudio= document.createElement('div');
-    addSpanTitleStudio.appendChild(spanStudio).innerHTML = contentTitleStudio;
+    let spanStudioLeft= document.createElement('div');
+    spanStudioLeft.classList.add("title-left");
+    let spanStudioRight= document.createElement('div');
+    spanStudioRight.classList.add("title-right");
+    addSpanTitleStudio.appendChild(spanStudioLeft).innerHTML = "Studio&nbsp";
+    addSpanTitleStudio.appendChild(spanStudioRight).innerHTML = "Koukaki";
     /* video */
     function showVideo(){
       if(document.body.clientWidth > 699){

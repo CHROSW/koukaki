@@ -128,19 +128,13 @@
   animation: fade cubic-bezier(0.2, 1, 0.3, 1) 3s forwards;
 }
 /* characters section animation */
-#characters {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s;
-}
 #characters h3 div{
   opacity: 0;
-  transform: translateY(105px);
+  transform: translateY(125px);
   transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s 1s;
 }
-#characters.characters-transition {
-  opacity: 1;
-  transform: translateY(0px);
+#characters.characters-animation {
+  animation: fade cubic-bezier(0.2, 1, 0.3, 1) 3s forwards;
 }
 #characters.characters-transition h3 div{
   opacity: 1;
@@ -178,15 +172,21 @@
 }
 /* studio section animation */
 #studio h2 {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
 }
-#studio h2 div{
+#studio h2 .title-left{
   opacity: 0;
   transform: translateY(105px);
   transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s 1s;
 }
+#studio h2 .title-right{
+  opacity: 0;
+  transform: translateY(105px);
+  transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s 2s;
+}
+
 #studio h2 h2:before {
   opacity: 0;
   transform: translateY(20px);
