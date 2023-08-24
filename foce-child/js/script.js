@@ -58,15 +58,15 @@ jQuery(document).ready(function($) {
         const animplaceLittleCloud = document.querySelector('#place div .little-cloud');
         if (entry.isIntersecting) {
         animplace.classList.add('place-transition');
-        animplaceBigCloud.classList.add('place-transition-cloud');
-        animplaceLittleCloud.classList.add('place-transition-cloud');
+        animplaceBigCloud.classList.add('place-animation-cloud');
+        animplaceLittleCloud.classList.add('place-animation-cloud');
         return; // if we added the class, exit the function
         }
 
         // We're not intersecting, so remove the class!
         animplace.classList.remove('place-transition');
-        animplaceBigCloud.classList.remove('place-transition-cloud');
-        animplaceLittleCloud.classList.remove('place-transition-cloud');
+        animplaceBigCloud.classList.remove('place-animation-cloud');
+        animplaceLittleCloud.classList.remove('place-animation-cloud');
       });
     });
 

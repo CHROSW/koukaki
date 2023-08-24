@@ -27,6 +27,37 @@
         background-repeat:  no-repeat;
     }
 }
+/* place animation */
+@keyframes place-up{
+    from{
+      transform: translateY(40px);
+    }
+    to{
+      transform: translateY(0px);
+    }
+  }
+  @keyframes cloud-animation{
+    0% {
+      transform:translateX(-300px);
+    }
+    50% {
+      transform:translateX(-150px);
+      z-index: -1;
+    }
+    100% {
+      transform:translateX(0px);
+      z-index: 2;
+    }
+  }
+/* fade animation */
+@keyframes fade{
+    0%{
+      transform: translateY(120px);
+    }
+    100%{
+      transform: translateY(0px);
+    }
+  }
 /* flower animation */
 @keyframes flower-article-rotation{
     from{
@@ -137,9 +168,6 @@ $color_1: #d4d95b;
 $color_2: #FFF5E9;
 
 #place{
-    opacity:0;
-    transform: translateY(20px);
-    transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s;
     h3{
         div{
             opacity: 0;
@@ -154,8 +182,7 @@ $color_2: #FFF5E9;
         transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s;
     }
     &.place-transition{
-        opacity:1;
-        transform:translateY(0px);
+        animation: place-up cubic-bezier(0.2, 1, 0.3, 1) 3s;
         h3{
             div{
                 opacity: 1;
