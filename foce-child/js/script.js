@@ -76,7 +76,7 @@ jQuery(document).ready(function($) {
     const obstudio = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         const animStudioH2 = document.querySelector('#studio h2');
-        const animStudioText = document.querySelector('#studio div'); 
+        const animStudioText = document.querySelector('#studio h2 + div'); 
         if (entry.isIntersecting) {
           animStudioH2.classList.add('studio-transition');
           animStudioH2.classList.add('studio-animation');
@@ -113,8 +113,12 @@ jQuery(document).ready(function($) {
         animFooterFlower.classList.remove('footer-transition-flower');
       });
     });
-
-    obsfooter.observe(document.querySelector('#colophon ul'));
+    var optionsSectionFooter = {
+      root: document.querySelector("#colophon ul"),
+      rootMargin: "140px",
+      threshold: 1.0,
+    };
+    obsfooter.observe(document.querySelector('#colophon ul'), optionsSectionFooter);
 
     /* title story to animate */
     let addSpanTitleStory = document.querySelector('.story h2');
