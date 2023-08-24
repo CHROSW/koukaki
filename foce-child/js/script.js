@@ -1,23 +1,32 @@
 jQuery(document).ready(function($) {
   $(document).ready(function(){
+
+    
+
     /* story section */
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         const animStoryH2 = document.querySelector('.story h2');
         const animStoryArticle = document.querySelector('.story__article'); 
         if (entry.isIntersecting) {
+          animStoryH2.classList.add('story-animation');
           animStoryH2.classList.add('story-transition');
-          animStoryArticle.classList.add('story-transition-article'); 
+          animStoryArticle.classList.add('story-animation-article');
         return; // if we added the class, exit the function
         }
   
         // We're not intersecting, so remove the class!
+        animStoryH2.classList.remove('story-animation');
         animStoryH2.classList.remove('story-transition');
-        animStoryArticle.classList.remove('story-transition-article');
+        animStoryArticle.classList.remove('story-animation-article');
       });
     });
-  
-    observer.observe(document.querySelector('.story p'));
+    var optionsSectionStory = {
+      root: document.querySelector(".story p"),
+      rootMargin: "140px",
+      threshold: 1.0,
+    };
+    observer.observe(document.querySelector('.story p'), optionsSectionStory);
 
     /* characters section */
     const obscharacters = new IntersectionObserver(entries => {

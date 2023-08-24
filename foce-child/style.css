@@ -34,6 +34,15 @@
     background-repeat: no-repeat;
   }
 }
+/* fade anima tion */
+@keyframes fade{
+  0%{
+    transform: translateY(120px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
 /* flower animation */
 @keyframes flower-article-rotation{
   from{
@@ -96,54 +105,27 @@
 }
 /* story section animation */
 .story h2 {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s;
-}
-.story h2 h2:before {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s;
-}
-.story h2 h2:after {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s;
+  background-color: transparent;
 }
 .story h2 div{
   opacity: 0;
-  transform: translateY(105px);
+  transform: translateY(125px);
   transition: all cubic-bezier(0.2, 1, 0.3, 1) 3s 1s;
 }
-.story .story-transition{
-  opacity: 1;
-  transform: translateY(0px);
-  width: 100%;
+.story .story-animation{
+  width:100%;
+  animation: fade cubic-bezier(0.2, 1, 0.3, 1) 3s forwards;
 }
 .story .story-transition div{
   opacity: 1;
   transform: translateY(0px);
   width: 100%;
 }
-.story__article:after {
-  /*opacity: 0;*/
-  transform: translateY(20px);
-  transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s;
-  animation: flower-article-rotation 20s infinite linear;
+.story__article.story-animation-article::before {
+  animation: fade cubic-bezier(0.2, 1, 0.3, 1) 3s forwards;
 }
-.story__article:before {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s;
-}
-.story__article.story-transition-article::before {
-  opacity: 1;
-  transform: translateY(0px);
-}
-.story__article.story-transition-article::after {
-  /*opacity: 1;*/
-  transform: translateY(0px);
-  animation: flower-article-rotation 5s infinite linear;
+.story__article.story-animation-article::after {
+  animation: fade cubic-bezier(0.2, 1, 0.3, 1) 3s forwards;
 }
 /* characters section animation */
 #characters {

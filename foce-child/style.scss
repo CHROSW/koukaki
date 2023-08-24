@@ -83,55 +83,31 @@
 /* story section animation */
 .story{
     h2{
-        opacity:0;
-        transform: translateY(20px);
-        transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s;
-        h2:before{
-            opacity:0;
-            transform: translateY(20px);
-            transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s;
-        }
-        h2:after{
-            opacity:0;
-            transform: translateY(20px);
-            transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s;
-        }
+        background-color: transparent;
         div{
             opacity: 0;
-            transform: translateY(105px);
-            transition: all cubic-bezier(0.2, 1, 0.3, 1) 3s 3s;
+            transform: translateY(125px);
+            transition: all cubic-bezier(0.2, 1, 0.3, 1) 3s 1s;
         }
         
     }
     .story-transition{
-        opacity:1;
-        transform:translateY(0px);
-        width:100%;
         div{
             opacity: 1;
             transform: translateY(0px);
             width: 100%;
         }
     }
-    &__article:after{
-        opacity:0;
-        transform: translateY(20px);
-        transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s;
-    }
-    &__article:before{
-        opacity:0;
-        transform: translateY(20px);
-        transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s;
+    .story-animation{
+        width:100%;
+        animation: fade cubic-bezier(0.2, 1, 0.3, 1) 3s forwards;
     }
     &__article{
-        &.story-transition-article::before{
-            opacity: 1;
-            transform: translateY(0px);
+        &.story-animation-article::before{
+            animation: fade cubic-bezier(0.2, 1, 0.3, 1) 3s forwards;
         }
-        &.story-transition-article::after{
-            opacity: 1;
-            transform: translateY(0px);
-            animation: flower-article-rotation 20s infinite linear;
+        &.story-animation-article::after{
+            animation: fade cubic-bezier(0.2, 1, 0.3, 1) 3s forwards;
         }
     }
 }
