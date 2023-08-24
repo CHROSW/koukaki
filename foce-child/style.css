@@ -175,44 +175,28 @@
   display:flex;
   flex-direction: row;
   justify-content: center;
+  background-color: transparent;
 }
 #studio h2 .title-left{
   opacity: 0;
   transform: translateY(105px);
-  transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s 1s;
+  transition: all cubic-bezier(0.2, 1, 0.3, 1) 3s 1s;
 }
 #studio h2 .title-right{
   opacity: 0;
   transform: translateY(105px);
-  transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s 2s;
+  transition: all cubic-bezier(0.2, 1, 0.3, 1) 3s 2s;
 }
 
-#studio h2 h2:before {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s;
-}
-#studio h2 h2:after {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s;
-}
-#studio .studio-transition{
-  opacity: 1;
-  transform: translateY(0px);
+#studio .studio-animation{
+  animation: fade cubic-bezier(0.2, 1, 0.3, 1) 3s forwards;
 }
 #studio .studio-transition div{
   opacity: 1;
   transform: translateY(0px);
 }
-#studio div:before {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s;
-}
-#studio div.studio-transition-text::before {
-  opacity: 1;
-  transform: translateY(0px);
+#studio div.studio-animation-text::before {
+  animation: fade cubic-bezier(0.2, 1, 0.3, 1) 3s forwards;
 }
 /* footer section animation */
 .site-footer::before{

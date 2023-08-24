@@ -173,41 +173,31 @@ $color_2: #FFF5E9;
 /* studio section animation */
 #studio{
     h2{
-        opacity:0;
-        transform: translateY(20px);
-        transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s;
-        div{
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        background-color: transparent;
+        .title-left{
             opacity: 0;
             transform: translateY(105px);
-            transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s 1s;
+            transition: all cubic-bezier(0.2, 1, 0.3, 1) 3s 1s;
         }
-        h2:before{
-            opacity:0;
-            transform: translateY(20px);
-            transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s;
-        }
-        h2:after{
-            opacity:0;
-            transform: translateY(20px);
-            transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s;
-        }
-        
+        .title-right{
+            opacity: 0;
+            transform: translateY(105px);
+            transition: all cubic-bezier(0.2, 1, 0.3, 1) 3s 2s;
+        }   
+    }
+    .studio-animation{
+        animation: fade cubic-bezier(0.2, 1, 0.3, 1) 3s forwards;
     }
     .studio-transition{
-        opacity:1;
-        transform:translateY(0px);
         div{
             opacity:1;
             transform:translateY(0px);
         }
     }
     div{
-
-        &:before{
-            opacity: 0;
-            transform: translateY(20px);
-            transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s;
-        }
         &.studio-transition-text::before{
             opacity: 1;
             transform: translateY(0px);

@@ -43,12 +43,12 @@ jQuery(document).ready(function($) {
         animcharacters.classList.remove('characters-animation');
       });
     });
-    var optionsSectionStory = {
+    var optionsSectionCharacters = {
       root: document.querySelector("#characters"),
       rootMargin: "140px",
       threshold: 1.0,
     };
-    obscharacters.observe(document.querySelector('#characters'));
+    obscharacters.observe(document.querySelector('#characters'),  optionsSectionCharacters);
 
     /* place section */
     const obsplace = new IntersectionObserver(entries => {
@@ -79,17 +79,23 @@ jQuery(document).ready(function($) {
         const animStudioText = document.querySelector('#studio div'); 
         if (entry.isIntersecting) {
           animStudioH2.classList.add('studio-transition');
-          animStudioText.classList.add('studio-transition-text'); 
+          animStudioH2.classList.add('studio-animation');
+          animStudioText.classList.add('studio-animation-text'); 
           return; // if we added the class, exit the function
         }
 
         // We're not intersecting, so remove the class!
         animStudioH2.classList.remove('studio-transition');
-        animStudioText.classList.remove('studio-transition-text');
+        animStudioH2.classList.remove('studio-animation');
+        animStudioText.classList.remove('studio-animation-text');
       });
   });
-
-    obstudio.observe(document.querySelector('#studio div'));
+  var optionsSectionStudio = {
+    root: document.querySelector("#studio div"),
+    rootMargin: "140px",
+    threshold: 1.0,
+  };
+    obstudio.observe(document.querySelector('#studio div'), optionsSectionStudio);
 
     /* footer section */
     const obsfooter = new IntersectionObserver(entries => {
