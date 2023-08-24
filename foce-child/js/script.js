@@ -69,8 +69,12 @@ jQuery(document).ready(function($) {
         animplaceLittleCloud.classList.remove('place-animation-cloud');
       });
     });
-
-    obsplace.observe(document.querySelector('#place div p'));
+    var optionsSectionPlace = {
+      root: document.querySelector("#place div p"),
+      rootMargin: "140px",
+      threshold: 1.0,
+    };
+    obsplace.observe(document.querySelector('#place div p'), optionsSectionPlace);
 
     /* studio section */
     const obstudio = new IntersectionObserver(entries => {
