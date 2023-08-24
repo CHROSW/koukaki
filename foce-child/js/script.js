@@ -103,14 +103,14 @@ jQuery(document).ready(function($) {
         const animfooter = document.querySelector('#colophon');
         const animFooterFlower = document.querySelector('#colophon ul'); 
         if (entry.isIntersecting) {
-          animfooter.classList.add('footer-transition');
-          animFooterFlower.classList.add('footer-transition-flower'); 
+          animfooter.classList.add('footer-animation');
+          animFooterFlower.classList.add('footer-animation-flower'); 
           return; // if we added the class, exit the function
         }
 
         // We're not intersecting, so remove the class!
-        animfooter.classList.remove('footer-transition');
-        animFooterFlower.classList.remove('footer-transition-flower');
+        animfooter.classList.remove('footer-animation');
+        animFooterFlower.classList.remove('footer-animation-flower');
       });
     });
     var optionsSectionFooter = {

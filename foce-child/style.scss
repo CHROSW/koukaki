@@ -206,33 +206,15 @@ $color_2: #FFF5E9;
 }
 /* footer section animation */
 .site-footer{
-    &::before{
-        opacity: 0;
-        transform: translateY(20px);
-        transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s;
+    &.footer-animation::before{
+        animation: fade cubic-bezier(0.2, 1, 0.3, 1) 3s forwards;
     }
-    &::after{
-        opacity: 0;
-        transform: translateY(20px);
-        transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s;
-    }
-    &.footer-transition::before{
-        opacity: 1;
-        transform: translateY(0px);
-    }
-    &.footer-transition::after{
-        opacity: 1;
-        transform: translateY(0px);
+    &.footer-animation::after{
+        animation: fade cubic-bezier(0.2, 1, 0.3, 1) 3s forwards;
     }
     ul{
-        &:after{
-            opacity: 0;
-            transform: translateY(20px);
-            transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s;
-        }
-        &.footer-transition-flower::after{
-            opacity: 1;
-            transform: translateY(0px);
+        &.footer-animation-flower::after{
+            animation: fade cubic-bezier(0.2, 1, 0.3, 1) 3s forwards;
         }
     }
 }
