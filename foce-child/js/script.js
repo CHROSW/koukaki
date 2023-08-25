@@ -203,10 +203,23 @@ jQuery(document).ready(function($) {
     });
     
     /* parallalax title-video */
-    var s = skrollr.init();
-    parallalaxTitle=document.querySelector('.banner img');
-    parallalaxTitle.setAttribute('data-bottom-top', 'transform:translate(0, 0px, 0)');
-    parallalaxTitle.setAttribute('data-top-bottom', 'transform:translate(0, -200px, 0)');
+    var setSkrollr = function($el, data) {
+      for (var i = 0, l = data.length; i < l; i++) {
+          var d = data[i],
+              px = d[0];
+              css = d[1];
+          $el.attr('data-' + px, css);
+      }
+  }
+  
+  jQuery(function($) {
+      setSkrollr($('.banner img'), [[0, 'transform:translateY(0%)'], [750, 'transform:translateY(-100%)'], [1500, 'transform:translateY(100%)']]);
+      
+      skrollr.init({
+          smoothScrolling: false
+      });
+  });
+   
   });
     
     
