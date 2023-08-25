@@ -318,31 +318,37 @@ $color_2: #FFF5E9;
             width: 100%;
             padding-top: 50px;
             padding-bottom: 50px;
+            position: relative;
+            overflow:clip;
+            z-index:1;
+            display: block;
             .swiper-wrapper{
-                overflow-y: hidden;
-                height:480px;
-                width:1000px;
+                display: flex;
             }
         }
         .swiper-slide{
             background-position: center;
             background-size: cover;
-            figure{
-                img{
-                    display: block;
-                    &.attachment-full{
-                        &.size-full{
-                            &.wp-post-image{
-                                max-width: none;
-                            }
+            height:480px;
+            width: 480px;
+            position: relative;
+            display: block;
+            flex-shrink: 0;
+            transition-property: transform;
+            img{
+                display: block;
+                height:480px;
+                width: 480px;
+                overflow: clip;
+                &.attachment-full{
+                    &.size-full{
+                        &.wp-post-image{
+                            max-width: none;
                         }
                     }
                 }
             }
-        }
-        h3{
-            position: relative;
-            right:40%;
+            
         }
     }
 

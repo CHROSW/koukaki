@@ -179,23 +179,19 @@ jQuery(document).ready(function($) {
     /* swipper coverflow */
     var swiper = new Swiper(".mySwiper", {
       effect: "coverflow",
-      grabCursor: false,
+      grabCursor: true,
       centeredSlides: true,
-      slidesPerView: 4,
-      spaceBetween: 1,
-      freeMode: true,
-      loop: true,
+      slidesPerView: "auto",
       autoplay: {
         delay: 2500,
         disableOnInteraction: false,
       },
-      speed: 1000,
       coverflowEffect: {
         rotate: 50,
-        stretch: 0,
+        stretch: 1,
         depth: 100,
         modifier: 1,
-        slideShadows: true,
+        slideShadows: false,
       },
       pagination: {
         el: ".swiper-pagination",
@@ -214,7 +210,6 @@ jQuery(document).ready(function($) {
   
   jQuery(function($) {
       setSkrollr($('.banner img'), [[0, 'transform:translateY(0%)'], [750, 'transform:translateY(-100%)'], [1500, 'transform:translateY(100%)']]);
-      
       skrollr.init({
           smoothScrolling: false
       });

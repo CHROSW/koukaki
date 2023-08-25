@@ -288,26 +288,34 @@
   width: 100%;
   padding-top: 50px;
   padding-bottom: 50px;
+  position: relative;
+  overflow:clip;
+  z-index:1;
+  display: block;
 }
 .story #characters .swiper .swiper-wrapper{
-  overflow-y: hidden;
-  height:480px;
-  width:1000px;
+  display:flex;
 }
 .story #characters .swiper-slide {
   background-position: center;
   background-size: cover;
-}
-.story #characters .swiper-slide figure img {
+  height:480px;
+  width: 480px;
+  position: relative;
   display: block;
+  flex-shrink: 0;
+  transition-property: transform;
+}
+.story #characters .swiper-slide img {
+  display: block;
+  height:480px;
+  width: 480px;
+  overflow: clip;
 }
 .story #characters .swiper-slide figure img.attachment-full.size-full.wp-post-image{
   max-width: none;
 }
-.story #characters h3{
-  position:relative;
-  right:40%;
-}
+
 /* cloud animation */
 .story #place{
   background: url('/koukaki/wp-content/themes/foce-child/images/Studio_Koukaki-image_place.png');
