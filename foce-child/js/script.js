@@ -71,7 +71,7 @@ jQuery(document).ready(function($) {
     });
     var optionsSectionPlace = {
       root: document.querySelector("#place div p"),
-      rootMargin: "140px",
+      rootMargin: "160px",
       threshold: 1.0,
     };
     obsplace.observe(document.querySelector('#place div p'), optionsSectionPlace);
