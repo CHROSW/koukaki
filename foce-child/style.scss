@@ -42,7 +42,7 @@
     }
     100% {
       transform:translateX(0px);
-      z-index: 1;
+      z-index: 0;
     }
   }
 /* fade animation */
@@ -187,10 +187,10 @@ $color_2: #FFF5E9;
         h3{
             position: relative;
             top: 80px;
-            left: 50px;
+            left: 70px;
             div{
                 opacity: 0;
-                transform: translateY(105px);
+                transform: translateY(125px);
                 color: $color_1;
                 transition: all cubic-bezier(0.2, 1, 0.3, 1) 3s 1s;
             }
@@ -202,9 +202,9 @@ $color_2: #FFF5E9;
                 left: 0px;
                 padding-left: 10em;
                 opacity: 0;
-                transform: translateY(-20px);
+                transform: translateY(-50px);
                 transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s;
-            }
+                z-index: 1;           }
         }  
         &.place-transition{
         animation: place-up cubic-bezier(0.2, 1, 0.3, 1) 3s;
@@ -576,6 +576,17 @@ $color_2: #FFF5E9;
             h3 {
                 position:relative;
                 right:0%;
+            }
+        }
+    }
+    /* nomination section */
+    #colophon{
+        #festival{
+            article{
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
             }
         }
     }
