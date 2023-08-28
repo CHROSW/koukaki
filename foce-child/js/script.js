@@ -228,6 +228,15 @@ jQuery(document).ready(function($) {
         animStoryArticle.classList.remove('story-animation-flower-super-speed');
       }
     });
+    /* close buger menu with link */
+    const navMenu= document.querySelector('.main-navigation');
+    const linkMenu = document.querySelectorAll('.nav-menu li a');
+      for(i=0 ; i < linkMenu.length ; i++){
+        linkMenu[i].addEventListener("click", function(){
+          navMenu.classList.remove('toggled');
+        });
+      }
+
   });  
     
 });
