@@ -38,15 +38,11 @@
   }
   @keyframes cloud-animation{
     0% {
-      transform:translateX(-300px);
-    }
-    50% {
-      transform:translateX(-150px);
-      z-index: -1;
+      transform:translateX(300px);
     }
     100% {
       transform:translateX(0px);
-      z-index: 2;
+      z-index: 1;
     }
   }
 /* fade animation */
@@ -186,35 +182,48 @@
 $color_1: #d4d95b;
 $color_2: #FFF5E9;
 
-#place{
-    h3{
-        div{
-            opacity: 0;
-            transform: translateY(105px);
-            color: $color_1;
-            transition: all cubic-bezier(0.2, 1, 0.3, 1) 3s 1s;
-        }
-    }
-    div p{
-        opacity: 0;
-        transform: translateY(-20px);
-        transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s;
-    }
-    &.place-transition{
-        animation: place-up cubic-bezier(0.2, 1, 0.3, 1) 3s;
+.story{
+    #place{
         h3{
+            position: relative;
+            top: 80px;
+            left: 50px;
             div{
-                opacity: 1;
-                color: $color_2;
-                transform: translateY(0px);
+                opacity: 0;
+                transform: translateY(105px);
+                color: $color_1;
+                transition: all cubic-bezier(0.2, 1, 0.3, 1) 3s 1s;
             }
         }
-        div p{
-            opacity: 1;
-            transform: translateY(0px);
+        >div{
+            p{
+                position: relative;
+                top: 100px;
+                left: 0px;
+                padding-left: 10em;
+                opacity: 0;
+                transform: translateY(-20px);
+                transition: transform cubic-bezier(0.2, 1, 0.3, 1) 3s;
+            }
+        }  
+        &.place-transition{
+        animation: place-up cubic-bezier(0.2, 1, 0.3, 1) 3s;
+            h3{
+                div{
+                    opacity: 1;
+                    color: $color_2;
+                    transform: translateY(0px);
+                }
+            }
+            div{
+                p{
+                    opacity: 1;
+                    transform: translateY(0px);
+                }
+            } 
         }
-    }
     
+    }
 }
 /* studio section animation */
 #studio{
