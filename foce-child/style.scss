@@ -419,7 +419,7 @@ $color_2: #FFF5E9;
             .nav-menu{
                 height: 100vh;
                 width: 100vw;
-                animation: burger-down cubic-bezier(0.2, 1, 0.3, 1) 3s;
+                animation: burger-down cubic-bezier(0.2, 1, 0.3, 1) 3s forwards;
             }
             button{
                 .line{
@@ -454,7 +454,7 @@ $color_2: #FFF5E9;
 		    width: 30%;
 		    position: absolute;
 		    right: 0px;
-		    top: 50px;
+		    top: 0px;
 		    .sunflower-burger {
 			    width: 108px;
 			    height: 108px;
