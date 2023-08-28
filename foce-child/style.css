@@ -70,6 +70,14 @@
    transform: rotate(359deg);
   }
 }
+@keyframes flower-article-rotation-super-speed{
+  from{
+   transform: rotate(0turn);
+  }
+  to{
+   transform: rotate(5turn);
+  }
+}
 @keyframes flower-article-up{
   from{
     top:120px;
@@ -159,6 +167,9 @@
 }
 .story__article.story-animation-article::after {
   animation: flower-article-rotation linear 20s infinite, flower-article-up cubic-bezier(0.2, 1, 0.3, 1) 3s forwards;
+}
+.story__article.story-animation-flower-super-speed::after{
+  animation: flower-article-rotation-super-speed infinite 8s linear;
 }
 /* characters section animation */
 #characters h3 div{

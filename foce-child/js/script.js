@@ -9,9 +9,11 @@ jQuery(document).ready(function($) {
         const animStoryH2 = document.querySelector('.story h2');
         const animStoryArticle = document.querySelector('.story__article'); 
         if (entry.isIntersecting) {
+          animStoryArticle.classList.remove('story-animation-flower-super-speed');
           animStoryH2.classList.add('story-animation');
           animStoryH2.classList.add('story-transition');
           animStoryArticle.classList.add('story-animation-article');
+          
         return; // if we added the class, exit the function
         }
   
@@ -71,7 +73,7 @@ jQuery(document).ready(function($) {
     });
     var optionsSectionPlace = {
       root: document.querySelector("#place div p"),
-      rootMargin: "160px",
+      rootMargin: "140px",
       threshold: 1.0,
     };
     obsplace.observe(document.querySelector('#place div p'), optionsSectionPlace);
@@ -93,12 +95,12 @@ jQuery(document).ready(function($) {
         animStudioH2.classList.remove('studio-animation');
         animStudioText.classList.remove('studio-animation-text');
       });
-  });
-  var optionsSectionStudio = {
-    root: document.querySelector("#studio div"),
-    rootMargin: "140px",
-    threshold: 1.0,
-  };
+    });
+    var optionsSectionStudio = {
+      root: document.querySelector("#studio div"),
+      rootMargin: "140px",
+      threshold: 1.0,
+    };
     obstudio.observe(document.querySelector('#studio div'), optionsSectionStudio);
 
     /* footer section */
@@ -206,16 +208,26 @@ jQuery(document).ready(function($) {
               css = d[1];
           $el.attr('data-' + px, css);
       }
-  }
-  
-  jQuery(function($) {
+    }
+   
+    jQuery(function($) {
       setSkrollr($('.banner img'), [[0, 'transform:translateY(0%)'], [750, 'transform:translateY(-100%)'], [1500, 'transform:translateY(100%)']]);
       skrollr.init({
           smoothScrolling: false
       });
-  });
+    });
    
-  });
-    
+  
+
+    /* super speed rotating flower */
+    window.addEventListener("scroll", function (e) {
+      if(window.scrollY > 700 && window.scrollY < 900){
+        const animStoryArticle = document.querySelector('.story__article');
+        animStoryArticle.classList.add('story-animation-flower-super-speed');
+      }else{
+        animStoryArticle.classList.remove('story-animation-flower-super-speed');
+      }
+    });
+  });  
     
 });
