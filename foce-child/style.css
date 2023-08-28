@@ -188,6 +188,7 @@
 .story #place > div p {
   position: relative;
   top: 100px;
+  right:15px;
   padding-left: 10em;
   opacity: 0;
   transform: translateY(-50px);
