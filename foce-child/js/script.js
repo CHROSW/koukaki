@@ -227,11 +227,6 @@ jQuery(document).ready(function($) {
     let state;
     window.addEventListener("scroll", function (e) {
       const animStoryArticle = document.querySelector('.story__article');
-      if(window.scrollY > 700 && window.scrollY < 900){
-        animStoryArticle.classList.add('story-animation-flower-super-speed');
-      }else{
-        animStoryArticle.classList.remove('story-animation-flower-super-speed');
-      }
       if(state !== null){
         clearTimeout(state);
         animStoryArticle.classList.add('story-animation-flower-super-speed');
