@@ -13,7 +13,7 @@ jQuery(document).ready(function($) {
           animStoryH2.classList.add('story-animation');
           animStoryH2.classList.add('story-transition');
           animStoryArticle.classList.add('story-animation-article');
-          
+          observer.unobserve(document.querySelector('.story p'));
         return; // if we added the class, exit the function
         }
   
@@ -37,6 +37,7 @@ jQuery(document).ready(function($) {
         if (entry.isIntersecting) {
           animcharacters.classList.add('characters-transition');
           animcharacters.classList.add('characters-animation');
+          obscharacters.unobserve(document.querySelector('#characters'));
         return; // if we added the class, exit the function
         }
   
@@ -62,6 +63,7 @@ jQuery(document).ready(function($) {
         animplace.classList.add('place-transition');
         animplaceBigCloud.classList.add('place-animation-cloud');
         animplaceLittleCloud.classList.add('place-animation-cloud');
+        obsplace.unobserve(document.querySelector('#place div p'));
         return; // if we added the class, exit the function
         }
 
@@ -86,7 +88,8 @@ jQuery(document).ready(function($) {
         if (entry.isIntersecting) {
           animStudioH2.classList.add('studio-transition');
           animStudioH2.classList.add('studio-animation');
-          animStudioText.classList.add('studio-animation-text'); 
+          animStudioText.classList.add('studio-animation-text');
+          obstudio.unobserve(document.querySelector('#studio div p')); 
           return; // if we added the class, exit the function
         }
 
@@ -97,11 +100,11 @@ jQuery(document).ready(function($) {
       });
     });
     var optionsSectionStudio = {
-      root: document.querySelector("#studio div"),
+      root: document.querySelector("#studio div p"),
       rootMargin: "140px",
       threshold: 1.0,
     };
-    obstudio.observe(document.querySelector('#studio div'), optionsSectionStudio);
+    obstudio.observe(document.querySelector('#studio div p'), optionsSectionStudio);
 
     /* footer section */
     const obsfooter = new IntersectionObserver(entries => {
@@ -111,6 +114,7 @@ jQuery(document).ready(function($) {
         if (entry.isIntersecting) {
           animfooter.classList.add('footer-animation');
           animFooterFlower.classList.add('footer-animation-flower'); 
+          obsfooter.unobserve(document.querySelector('#colophon ul'));
           return; // if we added the class, exit the function
         }
 
@@ -220,14 +224,24 @@ jQuery(document).ready(function($) {
   
 
     /* super speed rotating flower */
+    let state;
     window.addEventListener("scroll", function (e) {
+      const animStoryArticle = document.querySelector('.story__article');
       if(window.scrollY > 700 && window.scrollY < 900){
-        const animStoryArticle = document.querySelector('.story__article');
         animStoryArticle.classList.add('story-animation-flower-super-speed');
       }else{
         animStoryArticle.classList.remove('story-animation-flower-super-speed');
       }
-    });
+      if(state !== null){
+        clearTimeout(state);
+        animStoryArticle.classList.add('story-animation-flower-super-speed');
+        }
+        state =  setTimeout(function() {
+          animStoryArticle.classList.remove('story-animation-flower-super-speed');
+          animStoryArticle.classList.remove('story-animation-article');
+          animStoryArticle.classList.add('story-animation-flower');
+        }, 300);
+    }, false);
     /* close buger menu with link */
     const navMenu= document.querySelector('.main-navigation');
     const linkMenu = document.querySelectorAll('.nav-menu li a');
