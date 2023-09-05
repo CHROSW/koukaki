@@ -16,7 +16,14 @@
         top: 0%;
     }
 }
-
+@keyframes burger-down {
+    0% {
+      transform: translateY(-50px);
+    }
+    100% {
+      transform: translateY(40px);
+    }
+  }
 @keyframes banner-background-down{
     0%{
         background-position: 0px -50px;
@@ -63,7 +70,7 @@
      transform: rotate(359deg);
     }
  }
- @keyframes flower-article-rotation-super-speed{
+ @keyframes flower-rotation-super-speed{
     from{
      transform: rotate(0turn);
     }
@@ -125,6 +132,7 @@
   }
 .banner{
         animation: banner-background-down cubic-bezier(0.2,1,0.3,1) 3s;
+        background-attachment: fixed;
     img{
         position: relative;
         animation: banner-title-up cubic-bezier(0.2,1,0.3,1) 3s, move_wave 5s linear infinite;
@@ -132,6 +140,8 @@
     }
     video{
         position: absolute;
+        object-fit: cover;
+        overflow: hidden;
     }
 }
 /* story section animation */
@@ -144,6 +154,14 @@
             transition: all cubic-bezier(0.2, 1, 0.3, 1) 3s 1s;
         }
         
+    }
+    >h2{
+        &.story-animation::after{
+            animation: flower-article-rotation linear 20s infinite;
+        }
+        &.animation-flower-super-speed::after{
+            animation: flower-rotation-super-speed infinite 8s linear;
+        }
     }
     .story-transition{
         div{
@@ -257,6 +275,20 @@ $color_2: #FFF5E9;
             transition: all cubic-bezier(0.2, 1, 0.3, 1) 3s 1.1s;
         }   
     }
+    >h2{
+        &.studio-animation::before{
+            animation: flower-article-rotation linear 20s infinite;
+        }
+        &.animation-flower-super-speed::before{
+            animation: flower-rotation-super-speed infinite 8s linear;
+        }
+        &.studio-animation::after{
+            animation: flower-article-rotation linear 20s infinite;
+        }
+        &.animation-flower-super-speed::after{
+            animation: flower-rotation-super-speed infinite 8s linear;
+        }
+    }
     .studio-animation{
         animation: fade cubic-bezier(0.2, 1, 0.3, 1) 3s forwards;
     }
@@ -276,14 +308,23 @@ $color_2: #FFF5E9;
 /* footer section animation */
 .site-footer{
     &.footer-animation::before{
-        animation: fade cubic-bezier(0.2, 1, 0.3, 1) 3s forwards;
+        animation: flower-article-rotation linear 20s infinite, fade cubic-bezier(0.2, 1, 0.3, 1) 3s forwards;
+    }
+    &.animation-flower-super-speed::before{
+        animation: flower-rotation-super-speed infinite 8s linear;
     }
     &.footer-animation::after{
-        animation: fade cubic-bezier(0.2, 1, 0.3, 1) 3s forwards;
+        animation: flower-article-rotation linear 20s infinite, fade cubic-bezier(0.2, 1, 0.3, 1) 3s forwards;
+    }
+    &.animation-flower-super-speed::after{
+        animation: flower-rotation-super-speed infinite 8s linear;
     }
     ul{
         &.footer-animation-flower::after{
-            animation: fade cubic-bezier(0.2, 1, 0.3, 1) 3s forwards;
+            animation: flower-article-rotation linear 20s infinite;
+        }
+        &.animation-flower-super-speed::after{
+            animation: flower-rotation-super-speed infinite 8s linear;
         }
     }
 }
@@ -384,30 +425,30 @@ $color_2: #FFF5E9;
             background: url('/koukaki/wp-content/themes/foce-child/images/big_cloud.png');
             width:316px;
             height:122px;
-            left: 950px;
+            left: 550px;
             bottom:320px;
             filter:blur(10px);
             position: relative;
             z-index: 2;
             transform:translateX(0px);
             transition: transform linear 3s;
-            &.place-transition-cloud{
-                transform:translateX(-300px);
+            &.place-animation-cloud{
+                animation: cloud-animation linear 3s forwards;
             }
         }
         .little-cloud{
             background: url('/koukaki/wp-content/themes/foce-child/images/little_cloud.png');
             width:142px;
             height: 55px;
-            left:710px;
+            left:280px;
             bottom:265px;
             filter: blur(8px);
             position: relative;
             z-index: -1;
             transform:translateX(0px);
             transition: transform linear 3s;
-            &.place-transition-cloud{
-                transform:translateX(-300px);
+            &.place-animation-cloud{
+                animation: cloud-animation linear 3s forwards;
             }
         }
     }
@@ -445,7 +486,7 @@ $color_2: #FFF5E9;
 	    .burger-title.menu-toggle {
 		    position: absolute;
 		    top: 5px;
-		    margin-left: 25%;
+		    margin-left: 40%;
 	    }
 	    button {
 		    margin: 0px;
@@ -605,3 +646,184 @@ $color_2: #FFF5E9;
         }
     }
 }
+@media screen and (min-width: 700px){
+    .menu-toggle{
+        display: block;
+    }
+    .main-navigation{
+        height: 80px;
+        ul{
+            display: none;
+            .site-title{
+                display: none;
+            }
+        }
+    }
+    /* burger animation */
+  
+    $font-family_1: 'Roboto Mono', monospace;
+    $background-color_1: #FFF5E9;
+    $color_3: grey;
+    .main-navigation {
+        &.toggled{
+            .nav-menu{
+                height: 100vh;
+                animation: burger-down cubic-bezier(0.2, 1, 0.3, 1) 3s forwards;
+            }
+            button{
+                .line{
+                    color: $color_3;
+                    background-color: transparent;
+                    font-size: 28px;
+                    position: relative;
+                    bottom:10px;
+                }
+            }
+        }
+        .burger-title.menu-toggle {
+            position: absolute;
+            top: 20px;
+            margin-left: 40%;
+        }
+        button {
+            margin: 0px;
+            position: relative;
+            top: 20px;
+            left: 85%;
+            .line{
+                color: transparent;
+                margin-block: 5px;
+                height: 2px;
+                background-color: $color_3;
+            }
+        }
+        .left-animation-burger {
+            display: flex;
+            flex-direction: column;
+            float: left;
+        }
+        .right-animation-burger {
+            display: flex;
+            flex-direction: column;
+        }
+        .right-animation-burger.menu-toggle {
+            width: 30%;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            .sunflower-burger {
+                width: 108px;
+                height: 108px;
+                background: url('../foce/assets/images/sunflower.png');
+                background-size: cover;
+                animation: flower-article-rotation infinite linear 20s;
+            }
+            .randomflower-burger {
+                width: 37px;
+                height: 37px;
+                background: url('../foce/assets/images/random_flower.png');
+                background-size: cover;
+                position: relative;
+                bottom: 35px;
+                left: 90%;
+                animation: flower-article-rotation infinite linear 20s;
+            }
+            .cat3-burger {
+                width: 75px;
+                height: 75px;
+                background: url('/koukaki/wp-content/themes/foce-child/images/Group 180.png');
+                background-size: cover;
+                position: relative;
+                top: 120px;
+                animation: floating infinite linear 3s 2s;
+            }
+            .hibiscusfooter-burger {
+                width: 200px;
+                height: 200px;
+                background: url('/koukaki/wp-content/themes/foce/assets/images/hibiscus_footer.png');
+                background-size: cover;
+                position: relative;
+                top: 110px;
+                left: 50%;
+                animation: flower-article-rotation infinite linear 20s;
+            }
+        }
+        .left-animation-burger.menu-toggle {
+            width: 30%;
+            position: absolute;
+            left: 0px;
+            .orchid-burger {
+                width: 84px;
+                height: 84px;
+                background: url('../foce/assets/images/orchid.png');
+                background-position: 92% 50%;
+                background-size: cover;
+                position: relative;
+                top: 30px;
+                animation: flower-article-rotation infinite linear 20s;
+            }
+            .cat1-burger {
+                width: 65px;
+                height: 65px;
+                background: url('/koukaki/wp-content/themes/foce-child/images/cat.png');
+                background-size: cover;
+                position: relative;
+                left: 60%;
+                bottom: 10px;
+                animation: floating infinite linear 3s;
+            }
+            .flower-burger {
+                width: 35px;
+                height: 35px;
+                background: url('../foce/assets/images/flower.png');
+                background-size: cover;
+                position: relative;
+                left: 50%;
+                top: 100px;
+                animation: flower-article-rotation infinite linear 20s;
+            }
+            .cat2-burger {
+                width: 55px;
+                height: 45px;
+                background: url('/koukaki/wp-content/themes/foce-child/images/cat2.png');
+                background-size: cover;
+                position: relative;
+                top: 210px;
+                left: 15%;
+                animation: floating infinite linear 3s 1s;
+            }
+        }
+        .img-title-burger.menu-toggle {
+            width: 75px;
+            height: 65px;
+            padding-top: 10px;
+        }
+        ul {
+            width: 100%;
+            padding-left: 0px;
+            background-color: $background-color_1;
+            img {
+                margin: auto;
+            }
+            .footer-burger-menu.menu-toggle {
+                margin-top: 50px;
+                text-align: center;
+                font-size: x-small;
+            }
+            li {
+                a {
+                    font-weight: 400;
+                    font-size: 2em;
+                    font-family: $font-family_1;
+                    line-height: 84px;
+                    text-align: center;
+                    animation: title-up cubic-bezier(0.2, 1, 0.3, 1) 3s;
+                    &:hover {
+                        text-shadow: #ff5c00 -1px 0 5px;
+                        color: $color_1;
+                    }
+                }
+            }
+        }
+    }
+} 

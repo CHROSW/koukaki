@@ -226,15 +226,27 @@ jQuery(document).ready(function($) {
     /* super speed rotating flower */
     let state;
     window.addEventListener("scroll", function (e) {
+      const animStoryH2 = document.querySelector('.story h2');
       const animStoryArticle = document.querySelector('.story__article');
+      const animStudioH2 = document.querySelector('#studio h2');
+      const animfooter = document.querySelector('#colophon');
+      const animFooterFlower = document.querySelector('#colophon ul');
       if(state !== null){
         clearTimeout(state);
-        animStoryArticle.classList.add('story-animation-flower-super-speed');
+        animStoryH2.classList.add('animation-flower-super-speed');
+        animStoryArticle.classList.add('animation-flower-super-speed');
+        animStudioH2.classList.add('animation-flower-super-speed');
+        animfooter.classList.add('animation-flower-super-speed');
+        animFooterFlower.classList.add('animation-flower-super-speed');
         }
         state =  setTimeout(function() {
-          animStoryArticle.classList.remove('story-animation-flower-super-speed');
+          animStoryH2.classList.remove('animation-flower-super-speed');
+          animStudioH2.classList.remove('animation-flower-super-speed');
+          animStoryArticle.classList.remove('animation-flower-super-speed');
           animStoryArticle.classList.remove('story-animation-article');
           animStoryArticle.classList.add('story-animation-flower');
+          animfooter.classList.remove('animation-flower-super-speed');
+          animFooterFlower.classList.remove('animation-flower-super-speed');
         }, 300);
     }, false);
     /* close buger menu with link */

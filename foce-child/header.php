@@ -28,12 +28,12 @@
 	<header id="masthead" class="site-header">
 		<nav id="site-navigation" class="main-navigation">   
             <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-                <span class="line">X</span>
                 <span class="line"></span>
+                <span class="line">X</span>
                 <span class="line"></span>
             </button>
             <div class="burger-title menu-toggle">
-                <span>Fleurs d'orangers & chats errants</span>  
+                <span class="site-title">Fleurs d'orangers & chats errants</span>  
             </div>
             <ul>
                 <div class="left-animation-burger menu-toggle">
