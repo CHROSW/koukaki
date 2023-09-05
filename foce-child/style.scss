@@ -468,8 +468,9 @@ $color_2: #FFF5E9;
   
     $font-family_1: 'Roboto Mono', monospace;
     $background-color_1: #FFF5E9;
-   
+    $color_3: grey;
     .main-navigation {
+            height: 80px;
         &.toggled{
             .nav-menu{
                 height: 100vh;
@@ -478,22 +479,29 @@ $color_2: #FFF5E9;
             }
             button{
                 .line{
-                    color: black;
+                    color: $color_3;
                     background-color: transparent;
+                    font-size: 28px;
+                    position: relative;
+                    bottom:15px;
                 }
             }
         }
 	    .burger-title.menu-toggle {
 		    position: absolute;
-		    top: 5px;
-		    margin-left: 40%;
+		    top: 20px;
+		    margin-left: 18%;
 	    }
 	    button {
 		    margin: 0px;
 		    position: relative;
+            top: 20px;
 		    left: 85%;
             .line{
                 color: transparent;
+                margin-block: 5px;
+                height: 1px;
+                background-color: $color_3;
             }
 	    }
 	    .left-animation-burger {
@@ -676,7 +684,7 @@ $color_2: #FFF5E9;
                     background-color: transparent;
                     font-size: 28px;
                     position: relative;
-                    bottom:10px;
+                    bottom:15px;
                 }
             }
         }
@@ -693,7 +701,7 @@ $color_2: #FFF5E9;
             .line{
                 color: transparent;
                 margin-block: 5px;
-                height: 2px;
+                height: 1px;
                 background-color: $color_3;
             }
         }
