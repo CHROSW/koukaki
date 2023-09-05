@@ -148,6 +148,10 @@
 .story{
     h2{
         background-color: transparent;
+        &::after{
+            width: 155px;
+            height: 155px;
+        }
         div{
             opacity: 0;
             transform: translateY(125px);
