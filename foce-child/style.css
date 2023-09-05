@@ -246,6 +246,14 @@
   justify-content: center;
   background-color: transparent;
 }
+#studio h2::after{
+  width: 110px;
+  height: 110px;
+}
+#studio h2::before{
+  width: 200px;
+  height: 200px;
+}
 #studio h2 .title-left {
   opacity: 0;
   transform: translateY(125px);
